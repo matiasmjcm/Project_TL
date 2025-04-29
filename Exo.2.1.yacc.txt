@@ -38,10 +38,6 @@ concert:
 
 %%
 
-void yyerror(const char *s) {
-    fprintf(stderr, "Error: %s\n", s);
-}
-
 int main(void) {
     if (yyparse() == 0)
         printf("La commande est valide.\n");

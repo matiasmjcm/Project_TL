@@ -16,6 +16,7 @@ places                      { printf("places "); } //palabra clave "places"
 [\r\n]+                     { printf("RC\n"); } //Retorno de carro o linea nueva , cuenta las lineas
 [ \t]+                      { /* Ignorar espacios/tabs */ } //Espacios o tabs se ignoran 
 .                           { /* Ignorar otros caracteres */ } //Cualquier otro caracter no reconocido se ignora 
+FinFichier                  { printf("FinFichier "); } //palabra clave FinFichier que marca final del archivo
 
 %%
 

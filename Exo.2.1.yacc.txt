@@ -1,17 +1,3 @@
-----------------------------------------------------------------
-%{
- inclusion de bibliothèques en C et déclarations C
-%}
- définitions et directives yacc :
-Déclaration des terminaux (si besoin).
-Déclaration de l'axiome (optionnel)
-%%
- règles de grammaires écrites comme :
-<règle> {<instructions en C>}
-%%
-<programme principal et fonctions en C>
-----------------------------------------------------------------
-
 %{
 #include <stdio.h>
 #include <string.h>

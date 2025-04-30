@@ -1,0 +1,49 @@
+%{
+#include <stdio.h>
+#include <string.h>
+
+//variables globales
+int nbPlaces= 0; //Numero de lugares reservados
+int codeDossier= 0; //Codigo del dossier
+int etat = 0;       //Indica si estamos dentro del dossier activo (1) o no (0)
+%}
+
+%%
+
+
+Dossier {
+    //SI ya estabamos procesando un dossier, lo cerramos 
+    if (etat == 1 && nbPlaces > 0 && codeDossier != 0) {
+        printf("Le dossier %d concerne %d places.\n", codeDossier, nbPlaces);
+    }
+    //comenzamos un nuevo dossier 
+    etat = 1;
+    nbConcerts = 0;
+    prenomNom[0] = '\0'; //vaciamos el nombre 
+}
+
+//detectamos el codigo de dossier de 8 digitos y lo guardamos en codeDossier
+[0-9]{8} {
+	    if (etat == 1) {
+       codeDossier = atoi(yytext);
+    }
+}
+
+//sumamos a la variable nbPlaces cada vez que se detecta un valor tipo [1-9][0-9]?
+[1-9][0-9]? {
+	    if (etat == 1) {
+       nbPlaces = nbPlaces + atoi(yytext);
+    }
+}
+
+int main(void) {
+    yylex(); // corre el lexer
+
+    // Si tenemos un dossier abierto, se tiene que imprimir 
+    if (etat == 1 && nbPlaces > 0 && codeDossier != 0) {
+        printf("Le dossier %d concerne %d places.\n", codeDossier, nbPlaces);
+    }
+
+    printf("FinFichier\n");
+    return 0;
+}

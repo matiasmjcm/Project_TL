@@ -1,6 +1,7 @@
 %{
 #include <stdio.h>
 #include <string.h>
+#include "Exo.2.1.lex"
 
 //variables globales
 int nbPlaces= 0; //Numero de lugares reservados

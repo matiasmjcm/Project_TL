@@ -1,0 +1,14 @@
+Pour le Exo.2.3, on a decidé de definir une liste a droite du nombre de places du concert, 
+ce qui implique que cette liste appartient aux places réservées de ce concert.
+
+La liste "PListe" se trouvé toujour après "places" et est definie comme \([0-9]+(,[0-9]+)*\) avec:
+
+- \( qui est la parenthese ouvrante et \) qui est la parenthse fermante
+- [0-9]+ qui s'agit de dire que la liste contient au moins un nombre (on admet qu'une 
+  ligne correspondant a un concert existe que si au moins une place est concerné)
+- (,[0-9]+)* qui s'agit de 0 ou plusieurs nombres précédés d'une virgule
+
+Donc on aura des liste telles que:
+
+(1)
+(10,20,30)

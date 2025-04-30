@@ -1,7 +1,6 @@
 %{
 #include <stdio.h>
 #include <string.h>
-#include "Exo.2.1.lex"
 void yyerror(const char *s);
 int yylex(void);
 %}

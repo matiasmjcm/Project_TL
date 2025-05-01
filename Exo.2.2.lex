@@ -19,3 +19,9 @@ places                      { printf("places "); } //palabra clave "places"
 FinFichier                  { printf("FinFichier "); } //palabra clave FinFichier que marca final del archivo
 
 %%
+
+int main(void) {
+    yylex(); //se llama al analizador para procesar entrada 
+    printf("FinFichier\n"); //imprime cuando termina todo
+    return 0;
+}
